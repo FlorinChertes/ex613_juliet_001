@@ -27,7 +27,7 @@ Template File: sources-sink-04.tmpl.c
 #else /* NOT _WIN32 */
 #include <unistd.h>
 #define COMMAND_INT_PATH L"/bin/sh"
-#define COMMAND_INT L"sh"
+#define COMMAND_INT "sh"
 #define COMMAND_ARG1 L"-c"
 #define COMMAND_ARG2 L"ls "
 #define COMMAND_ARG3 data

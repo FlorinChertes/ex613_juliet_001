@@ -39,7 +39,9 @@ Template File: sources-sink-83_bad.tmpl.cpp
 #define TCP_PORT 27015
 #define LISTEN_BACKLOG 5
 
+#ifdef _WIN32
 #include <process.h>
+#endif
 
 namespace CWE78_OS_Command_Injection__wchar_t_listen_socket_w32_spawnvp_83
 {
@@ -134,7 +136,9 @@ CWE78_OS_Command_Injection__wchar_t_listen_socket_w32_spawnvp_83_bad::~CWE78_OS_
         /* wspawnvp - searches for the location of the command among
          * the directories specified by the PATH environment variable */
         /* POTENTIAL FLAW: Execute command without validating input possibly leading to command injection */
+#ifdef _WIN32
         _wspawnvp(_P_WAIT, COMMAND_INT, args);
+#endif
     }
 }
 }
